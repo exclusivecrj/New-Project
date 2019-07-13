@@ -5,25 +5,26 @@ import { Auth2Guard } from './service/auth2.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'pre-login',
     pathMatch: 'full'
   },
   {
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule',
-    canActivate: [Auth2Guard]
-  },
   { path: 'logoff', 
     loadChildren: './logoff/logoff.module#LogoffPageModule',
     canActivate: [Auth2Guard] 
   },
-  { path: 'lista-de-clientes', loadChildren: './lista-de-clientes/lista-de-clientes.module#ListaDeClientesPageModule' },
-  { path: 'cadastro-de-cliente', loadChildren: './cadastro-de-cliente/cadastro-de-cliente.module#CadastroDeClientePageModule' },
-  { path: 'cliente-view', loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule' }
+  { 
+    path: 'pre-login', 
+    loadChildren: './pre-login/pre-login.module#PreLoginPageModule' 
+  },
+  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
+  { path: 'cadastrar-roupa', loadChildren: './cadastrar-roupa/cadastrar-roupa.module#CadastrarRoupaPageModule' },
+  { path: 'cadastrar-perfil', loadChildren: './cadastrar-perfil/cadastrar-perfil.module#CadastrarPerfilPageModule' }
+
+
 ];
 
 @NgModule({

@@ -18,25 +18,25 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    },
-    {
       title: 'Logoff',
       url: '/logoff',
       icon: 'logoff'
     },
     {
-      title: 'Lista de Clientes',
-      url: '/lista-de-clientes',
-      icon: 'body'
+      title: 'Cadastrar Roupas',
+      url: '/cadastrar-roupa',
+      icon: 'ios-add'
     },
     {
-      title: 'Cadastro de Clientes',
-      url: '/cadastro-de-cliente',
-      icon: 'book'
-    }
+      title: 'Cadastrar Perfil',
+      url: '/cadastrar-perfil',
+      icon: 'ios-list'
+    },
+    {
+      title: 'Teste',
+      url: '/test',
+      icon: ''
+    },
   ];
 // 
   constructor(
@@ -55,20 +55,5 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-
-    this.firebaseauth.authState
-    .subscribe(
-      user => {
-        if (user) {
-          this.router.navigate(['/list']);
-          } else {
-            this.router.navigate(['/home']);
-          }
-      },
-      () => {
-        this.router.navigate(['/list']);
-      }
-    );
-
   }
 }

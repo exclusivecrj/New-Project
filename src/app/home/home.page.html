@@ -1,24 +1,68 @@
-<ion-header>
-  <ion-toolbar>
+<ion-content>
 
-    <ion-title>
-      LOGIN
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+  <div class="logo">
+    <div class="img">
+      <img src="../../assets/img/logo.png">
+    </div>
+  </div>
 
-<ion-content padding>
+  <ion-slides pager="false" [options]="slideOpts">
+    <ion-slide>
+      <div>
+        <h1>Cadastre-se</h1>
 
-  <ion-item>
-    <ion-label position="floating">E-mail</ion-label>
-    <ion-input #email></ion-input>
-  </ion-item>
+        <div class="box1">
+          <ion-item>
+            <ion-label class="">E-mail</ion-label>
+            <ion-input type="text" value="" #email></ion-input>
+          </ion-item>
+        </div>
 
-  <ion-item>
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input #senha></ion-input>
-    </ion-item>
+        <div class="box2">
+          <ion-item>
+            <ion-label fixed>Senha</ion-label>
+            <ion-input type="password" value="" #senha></ion-input>
+          </ion-item>
+        </div>
 
-    <ion-button expand="full" (click)="logar()">Logar</ion-button>
-    <ion-button expand="full" fill="outline" (click)="cadastrar()">Cadastrar</ion-button>
+        <ion-button color="tertiary" (click)="cadastrar()" expand="block" color="dark">Cadastrar</ion-button>
+        <ion-button color="tertiary" (click)="logista()" expand="block" color="dark">Cadastrar como Logista</ion-button>
+      </div>
+
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <h1>Login</h1>
+        <p></p>
+        <ion-item>
+          <ion-label class="">E-mail</ion-label>
+          <ion-input type="text" value="" #email2></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>Senha</ion-label>
+          <ion-input type="password" value="" #senha2></ion-input>
+        </ion-item>
+
+        <ion-button color="tertiary" (click)="logar()" expand="block" color="dark">Entrar</ion-button>
+        <ion-button color="tertiary" (click)="logista()" expand="block" color="dark">Entrar como Logista</ion-button>
+
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+
+  <div class="test">
+    <ion-segment>
+      <ion-segment-button (click)="proximo()">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button (click)="anterior()">
+        <ion-label>Cadastro</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
 </ion-content>
+
+<link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
