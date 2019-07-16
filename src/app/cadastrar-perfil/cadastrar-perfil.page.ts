@@ -56,7 +56,6 @@ export class CadastrarPerfilPage implements OnInit {
   }
 
   ionViewDidLoad(){
-   
   }
 
   async loading() {

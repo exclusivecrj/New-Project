@@ -14,24 +14,42 @@ export class AppComponent {
   public appPages = [
     {
       title: 'Home',
-      url: '/home',
+      url: '/inicio',
       icon: 'home'
     },
-    {
-      title: 'Logoff',
-      url: '/logoff',
-      icon: 'logoff'
-    },
+
+
     {
       title: 'Cadastrar Roupas',
       url: '/cadastrar-roupa',
-      icon: 'ios-add'
+      icon: 'md-add'
     },
     {
       title: 'Cadastrar Perfil',
       url: '/cadastrar-perfil',
-      icon: 'ios-list'
+      icon: 'md-add'
     },
+
+    
+    {
+      title: 'Lista de Roupas',
+      url: '/roupas',
+      icon: 'md-list'
+    },
+    {
+      title: 'Lista de Perfis',
+      url: '/perfil',
+      icon: 'md-list'
+    },
+
+    
+    {
+      title: 'Logoff',
+      url: '/logoff',
+      icon: 'ios-log-out'
+    },
+
+
     {
       title: 'Teste',
       url: '/test',

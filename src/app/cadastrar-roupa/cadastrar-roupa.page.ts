@@ -35,7 +35,7 @@ export class CadastrarRoupaPage implements OnInit {
       preco : [''],
       modelo : [''],
       marca : [''],
-      img : [this.roupas.img],
+      img : [''],
       cor : [''],
       
     }) }
