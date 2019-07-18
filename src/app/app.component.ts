@@ -42,19 +42,13 @@ export class AppComponent {
       icon: 'md-list'
     },
 
+    {
+      title: 'Perfil',
+      url: '/view-Perfil',
+      icon: 'md-list'
+    },
+
     
-    {
-      title: 'Logoff',
-      url: '/logoff',
-      icon: 'ios-log-out'
-    },
-
-
-    {
-      title: 'Teste',
-      url: '/test',
-      icon: ''
-    },
   ];
 // 
   constructor(
@@ -74,4 +68,12 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  logoff(){
+    this.router.navigate(['/logoff']);
+  }
+  perfil(){
+    this.router.navigate(['/view-perfil']);
+  }
+
 }

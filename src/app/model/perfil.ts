@@ -10,6 +10,7 @@ export class Perfil{
     complemento: string;
     cpf: string;
     numero: string;
+    img: string;
     
     constructor(){
     }
@@ -25,5 +26,6 @@ export class Perfil{
         this.complemento = obj.complemento;
         this.cpf = obj.cpf;
         this.numero = obj.numero;
+        this.img = obj.img;
     }
 }

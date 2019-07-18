@@ -16,10 +16,17 @@ export class StorageService{
 
         let str = localStorage.getItem("carrinho");
 
-        if(str!=null){
-            return JSON.parse(str);
+        if(str==null || str==""){
+            console.log("ok");
+            let pedido : Pedido = {itens : []};
+            localStorage.setItem("carrinho",JSON.stringify(pedido));
+            return pedido;           
+            
+            
         }else{
-            return null;
+            console.log("ok 2");
+            return JSON.parse(str);
+            
         }
     }
 

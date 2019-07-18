@@ -21,10 +21,6 @@ const routes: Routes = [
     loadChildren: './pre-login/pre-login.module#PreLoginPageModule' 
   },
   { 
-    path: 'test', 
-    loadChildren: './test/test.module#TestPageModule' 
-  },
-  { 
     path: 'cadastrar-roupa', 
     loadChildren: './cadastrar-roupa/cadastrar-roupa.module#CadastrarRoupaPageModule' 
   },
@@ -58,7 +54,12 @@ const routes: Routes = [
   { 
     path: 'roupas', 
     loadChildren: './roupas/roupas.module#RoupasPageModule' 
-  }
+  },  { path: 'quem', loadChildren: './quem/quem.module#QuemPageModule' },
+  { path: 'view-perfil', loadChildren: './view-perfil/view-perfil.module#ViewPerfilPageModule' },
+  { path: 'cadastrar-marca', loadChildren: './cadastrar-marca/cadastrar-marca.module#CadastrarMarcaPageModule' },
+  { path: 'edita-marca', loadChildren: './edita-marca/edita-marca.module#EditaMarcaPageModule' },
+  { path: 'marca', loadChildren: './marca/marca.module#MarcaPageModule' }
+
 
 
 

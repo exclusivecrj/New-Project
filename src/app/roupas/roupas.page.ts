@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StorageService } from '../service/storage.service';
 import { ToastController, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Item } from 'src/app/model/item';
 
 @Component({
   selector: 'app-roupas',
@@ -36,16 +37,15 @@ export class RoupasPage implements OnInit {
 
     this.filtro = this.activateRoute.snapshot.paramMap.get('filtro');
     this.valor = this.activateRoute.snapshot.paramMap.get('valor');
+    
+    
+      this.pedido = this.storageServ.getCart();
 
-    if (this.storageServ.getCart() == null) {
-      this.pedido = this.storageServ.getCart()
-    } else {
-      this.pedido.itens = [];
-    }
 
   }
 
   ngOnInit() {
+    
     if (this.filtro == null)
       this.getList();
   }
@@ -83,6 +83,53 @@ export class RoupasPage implements OnInit {
     })
   }
 
+  viewRoupa(obj: roupas) {
+    this.router.navigate(['/edita-roupas', { 'roupas': obj.id }]);
+    console.log('Hello World');
+  }
+
+  remove(obj: roupas) {
+    var ref = firebase.firestore().collection("roupas");
+    ref.doc(obj.id).delete()
+      .then(() => {
+        this.listaDeRoupas = [];
+        this.getList();
+      }).catch(() => {
+        console.log('Erro ao atualizar');
+      })
+  }
+
+  addCarrinho(roupas: roupas) {
+    this.pedido = this.storageServ.getCart();
+    let add = true;
+
+    let i = new Item();
+    i.roupas = roupas;
+    i.quantidade = 1;
+
+    console.log(roupas);
+
+
+    if (this.pedido == null) {
+      this.pedido = new Pedido();
+      this.pedido.itens = [];
+    }
+
+    this.pedido.itens.forEach(p => {
+      if (p.roupas.id == roupas.id) {
+        add = false;
+      }
+
+
+    })
+
+    if (add == true) this.pedido.itens.push(i);
+
+
+    this.storageServ.setCart(this.pedido);
+    console.log(this.pedido);
+  }
+
   //outros
 
   async loading() {
@@ -106,6 +153,10 @@ export class RoupasPage implements OnInit {
       this.filtroBox = 'block'
     else
       this.filtroBox = 'none'
+  }
+
+  cart() {
+    this.router.navigate(['/carrinho'])
   }
 
 }
