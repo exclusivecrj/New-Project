@@ -20,7 +20,7 @@ export class EditaPerfilPage implements OnInit {
 
   formGroup: FormGroup;
 
-  imagem : string = "";
+  img : string = "";
 
   constructor(public activateRoute: ActivatedRoute,
     public formBuilder: FormBuilder,
@@ -76,11 +76,11 @@ export class EditaPerfilPage implements OnInit {
   }
 
   enviaArquivo(event){
-    let imagem = event.srcElement.files[0];
-    //console.log(imagem.name);
+    let img = event.srcElement.files[0];
+    //console.log(img.name);
     let ref = firebase.storage().ref().child(`perfil/${this.id}.jpg`);
   
-    ref.put(imagem).then(url=>{
+    ref.put(img).then(url=>{
       console.log("Enviado com sucesso!");
       this.downloadFoto();
     })
@@ -89,9 +89,8 @@ export class EditaPerfilPage implements OnInit {
   downloadFoto(){
     let ref = firebase.storage().ref()
       .child(`perfil/${this.perfil.id}.jpg`);
-
       ref.getDownloadURL().then( url=>{ 
-        this.imagem = url;
+        this.img = url;
       })
   }
 

@@ -19,7 +19,7 @@ export class ViewPerfilPage implements OnInit {
 
   formGroup: FormGroup;
 
-  imagem : string = "";
+  img : string = "";
 
   constructor(public activateRoute: ActivatedRoute,
     public formBuilder: FormBuilder,
@@ -47,6 +47,25 @@ export class ViewPerfilPage implements OnInit {
   }
 
   ngOnInit() {
+    this.obterPerfil();
+  }
+
+  obterPerfil() {
+    var ref = firebase.firestore().collection("perfil").doc(this.id);
+    ref.get().then(doc => {
+      this.perfil.setDados(doc.data());
+      this.form();
+    }).catch(function (error) {
+      console.log("Error getting document: ", error);
+    });
+  }
+
+  downloadFoto(){
+    let ref = firebase.storage().ref()
+      .child(`perfil/${this.perfil.id}.jpg`);
+      ref.getDownloadURL().then( url=>{ 
+        this.img = url;
+      })
   }
 
 }

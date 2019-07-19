@@ -44,7 +44,7 @@ export class AppComponent {
 
     {
       title: 'Perfil',
-      url: '/view-Perfil',
+      url: '/view-perfil',
       icon: 'md-list'
     },
 

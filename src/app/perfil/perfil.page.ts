@@ -13,9 +13,11 @@ export class PerfilPage implements OnInit {
 
   listaDePerfis: Perfil[] = [];
   firestore = firebase.firestore();
-  imagem;
+  img;
   settings = { timestampsInSnapshots: true };
   id: string;
+
+
 
 
   constructor(public router: Router,
@@ -41,6 +43,7 @@ export class PerfilPage implements OnInit {
         r.id = doc.id;
 
         let ref = firebase.storage().ref().child(`perfil/${doc.id}.jpg`).getDownloadURL().then(url => {
+          r.img = url;
 
           this.listaDePerfis.push(r);
         }).catch(err => {
@@ -73,9 +76,9 @@ export class PerfilPage implements OnInit {
   downloadFoto() {
     let ref = firebase.storage().ref()
       .child(`perfil/${this.id}.jpg`);
-
+    
     ref.getDownloadURL().then(url => {
-      this.imagem = url;
+      this.img = url;
     })
   }
 

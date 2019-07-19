@@ -29,10 +29,6 @@ const routes: Routes = [
     loadChildren: './cadastrar-perfil/cadastrar-perfil.module#CadastrarPerfilPageModule' 
   },
   { 
-    path: 'lista-roupas', 
-    loadChildren: './lista-roupas/lista-roupas.module#ListaRoupasPageModule' 
-  },
-  { 
     path: 'edita-roupas', 
     loadChildren: './edita-roupas/edita-roupas.module#EditaRoupasPageModule' 
   },
@@ -54,11 +50,13 @@ const routes: Routes = [
   { 
     path: 'roupas', 
     loadChildren: './roupas/roupas.module#RoupasPageModule' 
-  },  { path: 'quem', loadChildren: './quem/quem.module#QuemPageModule' },
+  },
+  { path: 'quem', loadChildren: './quem/quem.module#QuemPageModule' },
   { path: 'view-perfil', loadChildren: './view-perfil/view-perfil.module#ViewPerfilPageModule' },
   { path: 'cadastrar-marca', loadChildren: './cadastrar-marca/cadastrar-marca.module#CadastrarMarcaPageModule' },
   { path: 'edita-marca', loadChildren: './edita-marca/edita-marca.module#EditaMarcaPageModule' },
-  { path: 'marca', loadChildren: './marca/marca.module#MarcaPageModule' }
+  { path: 'marca', loadChildren: './marca/marca.module#MarcaPageModule' },  { path: 'finalizar-compra', loadChildren: './finalizar-compra/finalizar-compra.module#FinalizarCompraPageModule' }
+
 
 
 

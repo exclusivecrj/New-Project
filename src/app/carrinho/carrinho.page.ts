@@ -38,21 +38,9 @@ export class CarrinhoPage implements OnInit {
 
 
   // ion-fab dos redirecionamentos
-  cart(){
-    this.router.navigate(['/carrinho'])
-  }
-  search(){
-    this.router.navigate(['/roupas'])
-  }
-  contact(){
-    this.router.navigate(['/quem'])
-  }
-  logout(){
-    this.router.navigate(['/logoff'])
-  }
 
   finalizarCompra(){
-    this.router.navigate(['/finaliza-compra']);
+    this.router.navigate(['/finalizar-compra']);
   }
 
   downloadFoto() {

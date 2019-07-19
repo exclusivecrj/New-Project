@@ -33,7 +33,6 @@ export class CadastrarPerfilPage implements OnInit {
       this.fire.authState.subscribe(obj=>{
         this.idUsuario = this.fire.auth.currentUser.uid;
         console.log(this.idUsuario); // pega o ID
-
       });
 
 
