@@ -36,7 +36,7 @@ export class CadastrarMarcaPage implements OnInit {
         .then(resp => {
           console.log(resp);
           this.toast('Cadastrado com sucesso');
-          this.router.navigate(['/nossas-marcas']);
+          this.router.navigate(['/marca']);
           this.loadingController.dismiss();
         }).catch(() => {
           this.toast("Erro ao Cadastrar!");

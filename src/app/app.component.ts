@@ -29,6 +29,11 @@ export class AppComponent {
       url: '/cadastrar-perfil',
       icon: 'md-add'
     },
+    {
+      title: 'Cadastrar Marcas',
+      url: '/cadastrar-marca',
+      icon: 'md-add'
+    },
 
     
     {
@@ -39,6 +44,11 @@ export class AppComponent {
     {
       title: 'Lista de Perfis',
       url: '/perfil',
+      icon: 'md-list'
+    },
+    {
+      title: 'Lista de Marcas',
+      url: '/marca',
       icon: 'md-list'
     },
 

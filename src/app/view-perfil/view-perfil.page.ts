@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-view-perfil',
@@ -24,10 +25,19 @@ export class ViewPerfilPage implements OnInit {
   constructor(public activateRoute: ActivatedRoute,
     public formBuilder: FormBuilder,
     public router: Router,
+    public fire : AngularFireAuth,
     public loadingController: LoadingController) {
 
     this.id = this.activateRoute.snapshot.paramMap.get('perfil');
     this.form();
+
+    this.fire.authState.subscribe(obj=>{
+      this.id = this.fire.auth.currentUser.uid;
+      this.obterPerfil();
+
+
+    });
+
 
   }
 
@@ -47,12 +57,13 @@ export class ViewPerfilPage implements OnInit {
   }
 
   ngOnInit() {
-    this.obterPerfil();
+   
   }
 
   obterPerfil() {
     var ref = firebase.firestore().collection("perfil").doc(this.id);
     ref.get().then(doc => {
+      console.log(doc.data());
       this.perfil.setDados(doc.data());
       this.form();
     }).catch(function (error) {

@@ -13,28 +13,52 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <img src="{{perfil?.img}}">
-    <h1>Gabriel Martins</h1>
-    <h5>E-MAIL:</h5>
-    <p></p>
-    <h5>TELEFONE:</h5>
-    <p></p>
-    <h5>CPF:</h5>
-    <p></p>
-    <h5>CEP:</h5>
-    <p></p>
-    <h5>ENDEREÇO:</h5>
-    <p></p>
-    <h5>BAIRRO:</h5>
-    <p></p>
-    <h5>COMPLEMENTO:</h5>
-    <p></p>
-    <h5>NÚMERO:</h5>
+  <form [formGroup]="formGroup">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nome:</ion-label>
+        <ion-input formControlName="nome" type="text"></ion-input>
+      </ion-item>
 
-    <div style="text-align: center">
-      <ion-button shape="round" color="primary">ATUALIZAR</ion-button>
-    </div>
-  </ion-card>
-  <br>
+      <ion-item>
+        <ion-label floating>Telefone:</ion-label>
+        <ion-input formControlName="telefone" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>E-mail:</ion-label>
+        <ion-input formControlName="email" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>CPF:</ion-label>
+        <ion-input formControlName="cpf" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>CEP:</ion-label>
+        <ion-input formControlName="cep" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Endereço:</ion-label>
+        <ion-input formControlName="endereco" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Complemento:</ion-label>
+        <ion-input formControlName="complemento" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Bairro:</ion-label>
+        <ion-input formControlName="bairro" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Número:</ion-label>
+        <ion-input formControlName="numero" type="text"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </form>
 </ion-content>

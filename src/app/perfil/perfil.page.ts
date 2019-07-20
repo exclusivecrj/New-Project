@@ -17,9 +17,6 @@ export class PerfilPage implements OnInit {
   settings = { timestampsInSnapshots: true };
   id: string;
 
-
-
-
   constructor(public router: Router,
     public loadingController: LoadingController,
     public activateRoute: ActivatedRoute) { }
